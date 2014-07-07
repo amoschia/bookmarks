@@ -11,6 +11,9 @@
 	
 <script>
 var app = angular.module('', ['ngRoute']);
+$(document).on('ready page:load', function(){
+  angular.bootstrap(document.body, ['']);
+});
 </script>
   <%= csrf_meta_tags %>
 </head>

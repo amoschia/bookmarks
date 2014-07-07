@@ -1,4 +1,3 @@
-var app = angular.module('myapp', ['ngRoute']);
 function TodoCtrl($scope) {
   $scope.todos = [
     {text:'learn angular', done:true},

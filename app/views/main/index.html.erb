@@ -1,0 +1,45 @@
+<h2> hello </h2>
+<%= render 'users/menu/auth_items' %>
+<!-- ADMIN SETTINGS -->
+<% if can? :update, @config %>
+    <table class="table">
+	   <h3>Admin Settings</h3>
+	   <thead>
+		  <tr>
+			 <th>Email</th>
+			 <th>Password</th>
+			 <th>Role</th>
+		  </tr>
+	   </thead>
+	   <tbody>
+			<% @users.each do |user| %>
+			    <tr>
+				   <td><%= user.email %></td>
+				   <td><%= link_to "Edit", edit_user_path(user) %></td>
+				   <td><%= user.role %></td>
+			    </tr>
+		    <% end %>
+	   </tbody>
+	</table>  
+   </div>
+</div>
+<h2>Todo</h2>
+    <div ng-controller="TodoCtrl">
+      <span>{{remaining()}} of {{todos.length}} remaining</span>
+      [ <a href="" ng-click="archive()">archive</a> ]
+      <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+          <input type="checkbox" ng-model="todo.done">
+          <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+      </ul>
+      <form ng-submit="addTodo()">
+        <input type="text" ng-model="todoText"  size="30"
+               placeholder="add new todo here">
+        <input class="btn-primary" type="submit" value="add">
+      </form>
+    </div>
+<% else %>
+you cannot access this
+<% end %>
+<!-- END OF ADMIN SETTINGS -->

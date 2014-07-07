@@ -46,3 +46,4 @@ end
 
 gem 'devise'
 gem 'cancan'
+gem 'rails_12factor', group: :production

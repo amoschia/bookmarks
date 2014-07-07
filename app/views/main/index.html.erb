@@ -1,3 +1,10 @@
+	
+<script>
+var app = angular.module('myapp', ['ngRoute']);
+$(document).on('ready page:load', function(){
+  angular.bootstrap(document.body, ['myapp']);
+});
+</script>
 <h2> hello </h2>
 <%= render 'users/menu/auth_items' %>
 <!-- ADMIN SETTINGS -->
@@ -23,7 +30,7 @@
 	</table>  
    </div>
 </div>
-<div ng-app=''>
+<div ng-app='myapp'>
 	<h2>Todo</h2>
 		<div ng-controller="TodoCtrl">
 		  <span>{{remaining()}} of {{todos.length}} remaining</span>

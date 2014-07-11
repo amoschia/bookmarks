@@ -48,3 +48,5 @@ gem 'devise'
 gem 'cancan'
 gem 'rails_12factor', group: :production
 gem 'angularjs-rails'
+gem 'bootstrap-sass'
+gem 'validates_timeliness', '~> 3.0'

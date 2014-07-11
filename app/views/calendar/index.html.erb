@@ -1,0 +1,57 @@
+<script>$(document).ready(function() {
+
+    $('#calendar').fullCalendar({
+		events: {
+            url: '/bookings.json',
+            className: 'bookingscal',
+			allDay: false
+        },
+		timeFormat:'H(:mm)A' ,
+		displayEventEnd:{
+			month: true,
+			basicWeek: true,
+			'default': true
+		},
+		dayClick: function(date, allDay, jsEvent, view) {
+
+        if (allDay) {
+            // Clicked on the entire day
+            $('#calendar')
+                .fullCalendar('changeView', 'agendaDay'/* or 'basicDay' */)
+                .fullCalendar('gotoDate',
+                    date.getFullYear(), date.getMonth(), date.getDate());
+        }
+    }
+    })
+});
+</script>
+<header>
+<h2> Welcome to Bookmarks </h2>
+<nav class="navbar navbar-default" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="/">TutorialsPoint</a>
+   </div>
+   <div>
+      <ul class="nav navbar-nav">
+		<li><%= link_to "Todo", todo_path(@todo) %></li>
+         <li class="active"><%= link_to "Calendar", calendar_path(@calendar) %></li>
+         <li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				   Admin <b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+				   <li><%= link_to "Admin", admin_path(@admin) %></li>
+				   <li><%= link_to "Bookings", bookings_path(@bookings) %></li>
+				</ul>
+			</li>
+      </ul>
+   </div>
+   
+	<div id="authpanel">
+	<%= render 'users/menu/auth_items' %>
+	</div>
+</nav>
+</header>
+<body>
+<div id='calendar'></div>
+</body>

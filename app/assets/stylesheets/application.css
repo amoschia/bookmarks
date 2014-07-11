@@ -11,3 +11,10 @@
  *= require_self
  *= require_tree .
  */
+.notice:empty, .alert:empty {
+  display: none;
+  background-color: #5bc0de;
+}
+body, p, ol, ul, td{
+	font-family: 'Open Sans', sans-serif !important;
+}

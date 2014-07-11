@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  bookdate: 2014-07-10 10:25:17
+  groupsize: 1
+  roomsize: MyString
+
+two:
+  name: MyString
+  bookdate: 2014-07-10 10:25:17
+  groupsize: 1
+  roomsize: MyString

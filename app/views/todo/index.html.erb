@@ -1,0 +1,45 @@
+<header>
+<h2> Welcome to Bookmarks </h2>
+<nav class="navbar navbar-default" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="/">TutorialsPoint</a>
+   </div>
+   <div>
+      <ul class="nav navbar-nav">
+		<li class="active"><%= link_to "Todo", todo_path(@todo) %></li>
+         <li><%= link_to "Calendar", calendar_path(@calendar) %></li>
+         <li class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+				   Admin <b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+				   <li><%= link_to "Admin", admin_path(@admin) %></li>
+				   <li><%= link_to "Bookings", bookings_path(@bookings) %></li>
+				</ul>
+			</li>
+      </ul>
+   </div>
+   
+	<div id="authpanel">
+	<%= render 'users/menu/auth_items' %>
+	</div>
+</nav>
+</header>
+<div ng-app=''>
+	<h2>Todo</h2>
+		<div ng-controller="TodoCtrl">
+		  <span>{{remaining()}} of {{todos.length}} remaining</span>
+		  [ <a href="" ng-click="archive()">archive</a> ]
+		  <ul class="unstyled">
+			<li ng-repeat="todo in todos">
+			  <input type="checkbox" ng-model="todo.done">
+			  <span class="done-{{todo.done}}">{{todo.text}}</span>
+			</li>
+		  </ul>
+		  <form ng-submit="addTodo()">
+			<input type="text" ng-model="todoText"  size="30"
+				   placeholder="add new todo here">
+			<input class="btn-primary" type="submit" value="add">
+		  </form>
+		</div>
+</div>

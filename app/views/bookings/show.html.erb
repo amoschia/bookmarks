@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @booking.name %>
+</p>
+
+<p>
+  <strong>Starttime:</strong>
+  <%= @booking.start_time %>
+</p>
+
+<p>
+  <strong>Endtime:</strong>
+  <%= @booking.end_time %>
+</p>
+
+
+<p>
+  <strong>Groupsize:</strong>
+  <%= @booking.groupsize %>
+</p>
+
+<p>
+  <strong>Roomsize:</strong>
+  <%= @booking.roomsize %>
+</p>
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>
